@@ -9,6 +9,11 @@ class Branch(models.Model):
     def __str__(self):
         return self.Name
 
+class Branch_admin(models.Model):
+    Branch = models.ForeignKey(Branch, on_delete=models.DO_NOTHING)
+    Name = models.CharField(max_length=240)
+    Email = models.EmailField()
+    Phone = models.CharField(max_length=12) 
 
 class Branch_manager(models.Model):
     Branch = models.ForeignKey(Branch, on_delete=models.DO_NOTHING)
